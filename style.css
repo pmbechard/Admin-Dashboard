@@ -1,3 +1,12 @@
+/********************************************** UNIVERSAL **********************************************/
+
+:root {
+    --lightest: #F9F7F7;
+    --light: #DBE2EF;
+    --dark: #3F72AF;
+    --darker: #112D4E;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,18 +20,24 @@
     height: 100vh;
 }
 
+
+
+/********************************************** HEADER **********************************************/
+
 .header {
-    background-color: #DBE2EF;
+    background-color: var(--light);
     grid-area: 1 / 2 / 2 / -1;
 }
 
+
+
+/********************************************** SIDEBAR **********************************************/
 .sidebar {
     padding-top: 20px;
-    background-color: #112D4E;
+    background-color: var(--darker);
     grid-area: 1 / 1 / 3 / 2;
 
     display: grid;
-    grid-columns-template: 2fr 1fr;
     grid-auto-rows: repeat(auto-fill, minmax(20px, 1fr));
 }
 
@@ -41,7 +56,7 @@
 .sidebar .sidebar-item {
     padding: 0 10%;
     font-size: 18px;
-    color: #F9F7F7;
+    color: var(--lightest);
 }
 
 .sidebar .sidebar-item > img {
@@ -49,7 +64,7 @@
 }
 
 .sidebar > button {
-    color: #F9F7F7;
+    color: var(--lightest);
     background: none;
     border: none;
     width: 100%;
@@ -65,10 +80,18 @@
     opacity: 0.5;
 }
 
+
+
+/********************************************** CONTENT **********************************************/
+
 .main-content {
-    background-color: #3F72AF;
+    background-color: var(--dark);
     grid-area: 2 / 2 / 3 / 3;
 }
+
+
+
+/********************************************** MEDIA QUERIES **********************************************/
 
 @media  (max-width: 900px) {
     .sidebar p {
