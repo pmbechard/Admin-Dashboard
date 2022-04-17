@@ -29,6 +29,36 @@
     grid-area: 1 / 2 / 2 / -1;
 }
 
+.header-top {
+    height: 40%;
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-area,
+.profile-area {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: clamp(10px, 1vw, 40px);
+}
+
+.search-area input {
+    flex: 1;
+}
+
+.header #user-photo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px black;
+}
+
 
 
 /********************************************** SIDEBAR **********************************************/
