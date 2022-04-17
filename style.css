@@ -20,6 +20,10 @@
     padding-top: 20px;
     background-color: rgb(8, 89, 82);
     grid-area: 1 / 1 / 3 / 2;
+
+    display: grid;
+    grid-template: 2fr 1fr / 1fr;
+    grid-auto-rows: 1fr;
 }
 
 .sidebar .sidebar-item.sidebar-title {
@@ -36,9 +40,6 @@
 
 .sidebar .sidebar-item {
     padding: 10px 10%;
-    display: grid;
-    grid-template: 2fr 1fr / 1fr 3fr;
-    grid-auto-rows: 1fr;
     font-size: 18px;
     color: rgb(237, 237, 237);
 }
@@ -63,4 +64,17 @@
 .main-content {
     background-color: rgb(116, 167, 127);
     grid-area: 2 / 2 / 3 / 3;
+}
+
+@media  (max-width: 900px) {
+    .sidebar p {
+        width: 0;
+        visibility: hidden;
+    }
+
+    .sidebar > button {
+        margin: 0 auto;
+        width: auto;
+        grid-template-columns: 1fr;
+    }
 }
