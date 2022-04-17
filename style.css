@@ -5,6 +5,7 @@
     --light: #DBE2EF;
     --dark: #3F72AF;
     --darker: #112D4E;
+
 }
 
 * {
@@ -27,16 +28,19 @@
 .header {
     background-color: var(--light);
     grid-area: 1 / 2 / 2 / -1;
+
+    display: grid;
+    grid-template: 2fr 3fr / 1fr;
+    overflow: hidden;
 }
 
 .header-top {
-    height: 40%;
-    width: 100%;
-    padding: 10px;
+    padding: 0 clamp(1px, 5%, 10px);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 5%;
 }
 
 .search-area,
@@ -45,11 +49,31 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: clamp(10px, 1vw, 40px);
+    gap: clamp(5px, 1vw, 40px);
+    font-size: clamp(10px, 2vw, 18px);
+}
+
+.search-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: clamp(10px, 2vw, 18px);
 }
 
 .search-area input {
     flex: 1;
+    height: 30px;
+    border: 1px solid var(--dark);
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+.search-area input:focus {
+    outline: none;
+    /* border-width: 2px;
+    border-color: var(--darker); */
+    box-shadow: 1px 1px 1px black;
 }
 
 .header #user-photo {
@@ -57,6 +81,51 @@
     width: 50px;
     border-radius: 50%;
     box-shadow: 1px 1px 1px black;
+}
+
+.header-bottom {
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.user-greeting-area {
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    width: 50%;
+}
+
+.user-greeting-area p {
+    font-size: clamp(10px, 2vw, 16px);
+}
+
+.user-greeting-area h2 {
+    font-size: clamp(12px, 2vw, 24px);
+}
+
+.post-options-area {
+    display: flex;
+    justify-content: center;
+}
+
+.header-bottom button {
+    background-color: var(--darker);
+    color: var(--lightest);
+    padding: 10px 0;
+    width: clamp(70px, 10vw, 100px);
+    border: none;
+    border-radius: 12px;
+    /* margin: 0 clamp(3px, 1%, 20px); */
+    margin: 0 calc(5px + 1vw);
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+.header-bottom button:hover {
+    opacity: 0.5;
 }
 
 
@@ -123,7 +192,38 @@
 
 /********************************************** MEDIA QUERIES **********************************************/
 
+@media  (max-width: 700px) {
+    .greeting {
+        position: absolute;
+        left: 50px;
+        top: 10px;
+    }
+
+    .header-bottom {
+        justify-content: center;
+        gap: 4%;
+        position: relative;
+    }
+
+    .header-bottom button {
+        width: 80px;
+    }
+    
+}
+
+
+
 @media  (max-width: 1000px) {
+    .profile-area h3 {
+        visibility: hidden;
+        width: 0px;
+    }
+
+    .header-bottom img {
+        visibility: hidden;
+        width: 0px;
+    }
+
     .sidebar p {
         width: 0;
         visibility: hidden;
@@ -133,5 +233,9 @@
         margin: 0 auto;
         width: auto;
         grid-template-columns: 1fr;
+    }
+
+    .header-bottom {
+        justify-content: center;
     }
 }
