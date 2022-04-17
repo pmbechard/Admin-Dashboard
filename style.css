@@ -60,7 +60,7 @@
 }
 
 .sidebar .sidebar-item > img {
-    height: clamp(20px, 10%, 70px)
+    height: clamp(20px, 35rem, 25px);
 }
 
 .sidebar > button {
@@ -93,7 +93,7 @@
 
 /********************************************** MEDIA QUERIES **********************************************/
 
-@media  (max-width: 900px) {
+@media  (max-width: 1000px) {
     .sidebar p {
         width: 0;
         visibility: hidden;
