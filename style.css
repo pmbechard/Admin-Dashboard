@@ -51,16 +51,13 @@ h1, h2, h3, h4, h5, h6 {
 
     display: grid;
     grid-template: 2fr 3fr / 1fr;
-    /* overflow: hidden; */
 }
 
 .header-top {
-    padding: 0 clamp(1px, 5%, 10px);
-
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 5%;
+    justify-content: space-around;
+    padding: 0 10px;
 }
 
 .search-area,
@@ -78,7 +75,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     gap: 3px;
-    font-size: clamp(10px, 2vw, 18px);
 }
 
 .search-area input {
@@ -94,6 +90,10 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 1px 1px 1px black;
 }
 
+.profile-area {
+    margin: 0 5%;
+}
+
 .header #user-photo {
     height: 50px;
     width: 50px;
@@ -101,17 +101,27 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 1px 1px 1px black;
 }
 
-.header #notifications {
+.header #user-photo,
+.header #notifications,
+.header #hamburger-menu  {
     cursor: pointer;
     transition: all 0.05s ease-in-out;
 }
 
-.header #notifications:hover {
+.header #user-photo:hover,
+.header #notifications:hover,
+.header #hamburger-menu:hover {
     opacity: 0.5;
 }
 
-.header #notifications:active {
+.header #user-photo:active,
+.header #notifications:active,
+.header #hamburger-menu:active  {
     transform: scale(1.1);
+}
+
+.header h3 {
+    font-size: 18px;
 }
 
 .header-bottom {
@@ -267,7 +277,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card p {
     color: var(--grey);
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.project-card h4 {
+    font-size: 18px;
 }
 
 .icons {
@@ -312,11 +326,14 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
 
+.announcements-card h5 {
+    font-size: 16px;
 }
 
 .announcements-card p {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--grey);
 }
 
@@ -461,6 +478,21 @@ hr {
 
     #user-photo {
         margin: 10px 0;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header-top {
+        flex-direction: column;
+        position: relative;
+        top: 20px;
+    }
+
+    #hamburger-menu,
+    #notifications {
+        visibility: hidden;
     }
 
     .header-bottom {
