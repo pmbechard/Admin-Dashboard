@@ -36,8 +36,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .body-container {
     display: grid;
-    grid-template: 1fr 4fr / 1fr 4fr;
+    grid-template: 1fr 5fr / 1fr 5fr;
     height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -45,12 +46,12 @@ h1, h2, h3, h4, h5, h6 {
 /********************************************** HEADER **********************************************/
 
 .header {
-    background-color: var(--light);
+    background-color: var(--dark);
     grid-area: 1 / 2 / 2 / -1;
 
     display: grid;
     grid-template: 2fr 3fr / 1fr;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .header-top {
@@ -127,14 +128,15 @@ h1, h2, h3, h4, h5, h6 {
     gap: 3%;
     align-items: center;
     width: 50%;
+    color: var(--light)
 }
 
 .user-greeting-area p {
-    font-size: clamp(10px, 2vw, 16px);
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 .user-greeting-area h2 {
-    font-size: clamp(12px, 2vw, 24px);
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 .post-options-area {
@@ -151,6 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
     margin: 0 calc(5px + 1vw);
     font-size: clamp(12px, 2vw, 16px);
+    font-family: "Nanum Gothic Bold", Arial, sans-serif;
 }
 
 .header-bottom button:hover {
@@ -221,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 /********************************************** CONTENT **********************************************/
 
 .main-content {
-    background-color: var(--dark);
+    background-color: var(--light);
     padding: 2%;
     grid-area: 2 / 2 / 3 / 3;
 
@@ -245,7 +248,9 @@ h1, h2, h3, h4, h5, h6 {
 .project-cards-area {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
     gap: 20px;
+    height: calc(100% - 42px);
 }
 
 .project-card {
@@ -254,6 +259,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
     border-left: 5px solid var(--darker);
     box-shadow: 2px 2px 3px rgb(60, 60, 60);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-card p {
@@ -290,26 +299,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .announcements-area h2,
 .trending-area h2 {
-    margin-top: -5px;
     margin-bottom: 15px;
 }
 
 .announcements-card {
     background-color: var(--lightest);
-    padding: 30px 30px 0px 30px;
+    padding: 30px 30px;
     border-radius: 8px;
     box-shadow: 2px 2px 3px rgb(60, 60, 60);
+    height: calc(100% - 42px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
 }
 
 .announcements-card p {
     font-size: 12px;
     color: var(--grey);
-    padding-bottom: 20px;
 }
 
 hr {
     color: var(--grey);
-    margin-bottom: 20px;
 }
 
 /* TRENDING */
@@ -319,14 +331,15 @@ hr {
 
 .trending-card {
     background-color: var(--lightest);
-    padding: 10px 0px;
+    padding: 10px 10px;
     border-radius: 8px;
     box-shadow: 2px 2px 3px rgb(60, 60, 60);
-}
+    height: calc(100% - 42px);
 
-.trending-area h2 {
-    margin-top: -12px;;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}s
 
 .trending-area p {
     font-size: 12px;
@@ -369,27 +382,6 @@ hr {
 
 /********************************************** MEDIA QUERIES **********************************************/
 
-@media  (max-width: 700px) {
-    .greeting {
-        position: absolute;
-        left: 50px;
-        top: 10px;
-    }
-
-    .header-bottom {
-        justify-content: center;
-        gap: 4%;
-        position: relative;
-    }
-
-    .header-bottom button {
-        width: 80px;
-    }
-    
-}
-
-
-
 @media  (max-width: 1000px) {
     .profile-area h3 {
         visibility: hidden;
@@ -416,9 +408,26 @@ hr {
         justify-content: center;
     }
 
+    .header-bottom button {
+        margin-bottom: 10px;
+    }
+
     .main-content {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
+        padding-top: 0px;
+    }
+
+    .section-title {
+        position: sticky;
+        top: 0;
+        background-color: rgb(219, 226, 239, 0.7);
+        padding: 10px 0;
+        width: 120%;
+    }
+
+    .project-cards-area {
+        grid-template-columns: 1fr;
     }
 
     .projects-area {
@@ -429,7 +438,44 @@ hr {
         grid-area: 2 / 1 / 3 / 2;
     }
 
+    .announcements-card hr {
+        margin: 20px;
+    }
+
     .trending-area {
         grid-area: 3 / 1 / 4 / 2;
     }
+
+    .trending-card {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
+}
+
+@media  (max-width: 700px) {
+    .greeting {
+        position: absolute;
+        left: 50px;
+        top: 10px;
+    }
+
+    #user-photo {
+        margin: 10px 0;
+    }
+
+    .header-bottom {
+        justify-content: center;
+        gap: 4%;
+        position: relative;
+    }
+
+    .header-bottom button {
+        width: 80px;
+    }
+
+    .trending-card {
+        display: grid;
+        grid-template: repeat(4, 1fr) / repeat(1, 1fr);
+    }
+    
 }
