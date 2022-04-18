@@ -5,6 +5,7 @@
     --light: #DBE2EF;
     --dark: #3F72AF;
     --darker: #112D4E;
+    --grey: rgb(136, 136, 136);
 }
 
 @font-face {
@@ -238,13 +239,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .projects-area h2 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .project-cards-area {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
-    /* grid */
     gap: 20px;
 }
 
@@ -253,11 +253,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 30px 30px 0px 30px;
     border-radius: 8px;
     border-left: 5px solid var(--darker);
-    box-shadow: 1px 2px 2px rgb(60, 60, 60);
+    box-shadow: 2px 2px 3px rgb(60, 60, 60);
 }
 
 .project-card p {
-    color: rgb(136, 136, 136);
+    color: var(--grey);
     font-size: 14px;
 }
 
@@ -290,25 +290,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .announcements-area h2,
 .trending-area h2 {
-    margin-bottom: 20px;
+    margin-top: -5px;
+    margin-bottom: 15px;
 }
 
-.announcements-card,
-.trending-card {
+.announcements-card {
     background-color: var(--lightest);
     padding: 30px 30px 0px 30px;
     border-radius: 8px;
-    box-shadow: 1px 2px 2px rgb(60, 60, 60);
+    box-shadow: 2px 2px 3px rgb(60, 60, 60);
 }
 
 .announcements-card p {
     font-size: 12px;
-    color: rgb(136, 136, 136);
+    color: var(--grey);
     padding-bottom: 20px;
 }
 
 hr {
-    color: rgb(136, 136, 136);
+    color: var(--grey);
     margin-bottom: 20px;
 }
 
@@ -317,8 +317,29 @@ hr {
     grid-area: 2 / 2 / 3 / 3;
 }
 
+.trending-card {
+    background-color: var(--lightest);
+    padding: 10px 0px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px rgb(60, 60, 60);
+}
+
+.trending-area h2 {
+    margin-top: -12px;;
+}
+
 .trending-area p {
     font-size: 12px;
+}
+
+
+.trending-item {
+    display: grid;
+    grid-template: 1fr / 1fr 3fr;
+    padding: 5px 10px;
+    gap: 10px;
+    cursor: pointer;
+    width: 80%;
 }
 
 .trending-card img {
@@ -330,20 +351,19 @@ hr {
     justify-self: end;
 }
 
-.trending-item {
-    display: grid;
-    grid-template: 1fr / 1fr 3fr;
-    padding: 10px 0;
-    gap: 10px;
-}
-
-.trending-item > .handle {
+.trending-item > .trending-user-info {
     grid-area: 1 / 2 / 2 / 3;
 }
 
-.trending-item > .tagline {
-    grid-area: 2 / 2 / 3 / 3;
+.handle {
+    font-family: "Nanum Gothic Bold", Arial, sans-serif;
 }
+
+.tagline {
+    padding-top: 3px;
+    color: var(--grey);
+}
+
 
 
 
