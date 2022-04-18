@@ -5,14 +5,32 @@
     --light: #DBE2EF;
     --dark: #3F72AF;
     --darker: #112D4E;
+}
 
+@font-face {
+    font-family: "Nanum Gothic";
+    src: url(fonts/NanumGothic-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Nanum Gothic Bold";
+    src: url(fonts/NanumGothic-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Nanum Gothic Extra Bold";
+    src: url(fonts/NanumGothic-ExtraBold.ttf) format("truetype");
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Nanum Gothic", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nanum Gothic Bold", Arial, sans-serif;
 }
 
 .body-container {
@@ -71,8 +89,6 @@
 
 .search-area input:focus {
     outline: none;
-    /* border-width: 2px;
-    border-color: var(--darker); */
     box-shadow: 1px 1px 1px black;
 }
 
@@ -119,7 +135,6 @@
     width: clamp(70px, 10vw, 100px);
     border: none;
     border-radius: 12px;
-    /* margin: 0 clamp(3px, 1%, 20px); */
     margin: 0 calc(5px + 1vw);
     font-size: clamp(12px, 2vw, 16px);
 }
@@ -147,6 +162,10 @@
 .sidebar .sidebar-item.sidebar-title {
     font-weight: bold;
     font-size: 24px;
+}
+
+.sidebar-title p {
+    font-family: "Nanum Gothic Extra Bold", Arial, sans-serif;
 }
 
 .sidebar .sidebar-item.sidebar-title > img {
@@ -193,10 +212,10 @@
     grid-area: 2 / 2 / 3 / 3;
 
     display: grid;
-    grid-template: 1fr 1fr / 3fr 1fr;
+    grid-template: 1fr 1fr / 2fr 1fr;
     gap: 5%;
 
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .projects-area {
@@ -209,14 +228,43 @@
 
 .project-cards-area {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    /* grid */
     gap: 20px;
-    grid-auto-rows: 200px;
 }
 
 .project-card {
     background-color: var(--lightest);
-    padding: 10px;
+    padding: 30px 30px 0px 30px;
+    border-radius: 8px;
+    border-left: 5px solid var(--darker);
+    box-shadow: 1px 2px 2px rgb(60, 60, 60);
+}
+
+.project-card p {
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+}
+
+.icons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.icons img {
+    cursor: pointer;
+    transition: all 0.05s ease-in-out;
+}
+
+.icons img:hover {
+    opacity: 0.5;
+}
+
+.icons img:active {
+    transform: scale(1.1);
 }
 
 .announcements-area {
@@ -276,5 +324,22 @@
 
     .header-bottom {
         justify-content: center;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .projects-area {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .announcements-area {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .trending-area {
+        grid-area: 3 / 1 / 4 / 2;
     }
 }
