@@ -67,7 +67,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-end;
     align-items: center;
     gap: clamp(5px, 1vw, 40px);
-    font-size: clamp(10px, 2vw, 18px);
 }
 
 .search-area {
@@ -120,10 +119,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
-.header h3 {
-    font-size: 18px;
-}
-
 .header-bottom {
     padding: 0 10px;
 
@@ -145,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(14px, 2vw, 18px);
 }
 
-.user-greeting-area h2 {
+h2 {
     font-size: clamp(16px, 2vw, 24px);
 }
 
@@ -188,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar .sidebar-item.sidebar-title {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .sidebar-title p {
@@ -204,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar .sidebar-item {
     padding: 0 10%;
-    font-size: 18px;
+    font-size: 14px;
     color: var(--lightest);
 }
 
@@ -277,11 +272,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card p {
     color: var(--grey);
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 14px);
 }
 
 .project-card h4 {
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
 }
 
 .icons {
@@ -330,10 +325,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .announcements-card h5 {
     font-size: 16px;
+    font-size: clamp(12px, 2vw, 14px);
+
 }
 
 .announcements-card p {
-    font-size: 14px;
+    font-size: clamp(8px, 1vw, 10px);
     color: var(--grey);
 }
 
@@ -356,12 +353,7 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}s
-
-.trending-area p {
-    font-size: 12px;
 }
-
 
 .trending-item {
     display: grid;
@@ -387,11 +379,13 @@ hr {
 
 .handle {
     font-family: "Nanum Gothic Bold", Arial, sans-serif;
+    font-size: 14px;
 }
 
 .tagline {
     padding-top: 3px;
     color: var(--grey);
+    font-size: 12px;
 }
 
 
