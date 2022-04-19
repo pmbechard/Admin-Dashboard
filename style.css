@@ -133,11 +133,12 @@ h1, h2, h3, h4, h5, h6 {
     gap: 3%;
     align-items: center;
     width: 50%;
-    color: var(--light)
+    color: var(--lightest)
 }
 
 .user-greeting-area p {
     font-size: clamp(14px, 2vw, 18px);
+    color: var(--light);
 }
 
 h2 {
@@ -166,7 +167,7 @@ h2 {
 }
 
 .header-bottom button:active {
-    background-color: var(--dark);
+    opacity: 0.5;
 }
 
 
@@ -324,9 +325,12 @@ h2 {
 }
 
 .announcements-card h5 {
-    font-size: 16px;
     font-size: clamp(12px, 2vw, 14px);
+}
 
+.announcements-card h5:hover {
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .announcements-card p {
@@ -362,6 +366,10 @@ hr {
     gap: 10px;
     cursor: pointer;
     width: 80%;
+}
+
+.trending-item:hover {
+    border-left: 2px solid var(--dark);
 }
 
 .trending-card img {
